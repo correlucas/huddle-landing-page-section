@@ -77,12 +77,13 @@ body {
   color: var(--violet);
   background-color: var(--white);
   box-shadow: 2px 4px 17px 3px rgba(0, 0, 0, 0.15);
-  transition: ease-in 0.5s;
+  transition: ease-in 0.2s;
 }
 
 .btn:hover {
   color: var(--white);
-  background: var(--soft-magenta);
+  background-color: var(--soft-magenta);
+  transition: ease-in 0.2s;
 }
 
 /* *** */
@@ -115,9 +116,25 @@ header {
   /* bottom: -250px; */
 }
 
-.social-icons img:hover {
-  color: var(--soft-magenta);
-  border-color: var(--soft-magenta);
-  cursor: pointer;
-  transition: all ease-in-out 0.3s;
+svg {
+  height: 40px;
+  width: 40px;
+  fill: var(--white);
+  transition: ease 0.3s;
+}
+
+svg:hover {
+  fill: var(--soft-magenta);
+  transition: ease 0.3s;
+}
+
+
+
+.social-icons a {
+  transition: ease 0.5s;
+}
+
+.social-icons a:hover {
+  transition: ease 0.3s;
+  transform: translatey(-6px);
 }
