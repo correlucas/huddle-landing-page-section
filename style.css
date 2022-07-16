@@ -6,6 +6,7 @@
   text-decoration: 0;
   box-sizing: border-box;
   font-size: 16px;
+  transition: all 0.2s ease;
 }
 
 /* A elements that don't have a class get default styles */
@@ -92,6 +93,33 @@ header {
   position: relative;
 }
 
+.logo {
+  display: flex;
+  gap: 8px;
+  transform: translateX(10px);
+}
+
+.logo__name {
+  order: 2;
+  width: 156px;
+}
+
+.logo__icon {
+  height: 30px;
+  transition: ease-in-out 0.7s;
+}
+
+/* logo animation */
+
+.logo__name:hover~.logo__icon,
+.logo__icon:hover {
+  fill: var(--soft-magenta);
+  transform: rotateY(360deg) translate(-3px, -3px);
+  transition: ease-in-out 0.7s;
+}
+
+/* *** */
+
 .container {
   margin: 64px 80px 40px 80px;
 }
@@ -116,25 +144,19 @@ header {
   /* bottom: -250px; */
 }
 
-svg {
+.social-icons svg {
   height: 40px;
   width: 40px;
+}
+
+svg {
   fill: var(--white);
-  transition: ease 0.3s;
 }
 
 svg:hover {
   fill: var(--soft-magenta);
-  transition: ease 0.3s;
-}
-
-
-
-.social-icons a {
-  transition: ease 0.5s;
 }
 
 .social-icons a:hover {
-  transition: ease 0.3s;
   transform: translatey(-6px);
 }
