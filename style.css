@@ -63,8 +63,6 @@ body {
   min-height: 100vh;
 }
 
-
-
 /* font-size + button */
 
 .hero__heading h1 {
@@ -140,10 +138,6 @@ header {
   padding-top: 104px;
 }
 
-.hero__heading {
-  /* max-width: 520px; */
-}
-
 .social-icons {
   display: flex;
   gap: 16px;
@@ -169,6 +163,9 @@ svg:hover {
 .social-icons a:hover {
   transform: translatey(-6px);
 }
+
+@media (hover:none) {}
+
 
 
 @media (min-width: 1450px) {
@@ -249,5 +246,28 @@ svg:hover {
     font-size: 12px;
     line-height: 18px;
     padding: 12px 75px;
+  }
+
+  /* hover removed*/
+  .logo__name:hover~.logo__icon,
+  .logo__icon:hover {
+    fill: var(--white);
+    transform: none;
+    transition: none;
+  }
+
+  .btn:hover {
+    color: var(--violet);
+    background-color: var(--white);
+    transition: none;
+  }
+
+  svg:hover {
+    cursor: none;
+    fill: white;
+  }
+
+  .social-icons a:hover {
+    transform: translatey(0);
   }
 }
