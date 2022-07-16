@@ -42,20 +42,28 @@ button {
   /* primary */
   --white: hsla(0, 0%, 100%, 0.95);
   --violet: hsl(257, 40%, 49%);
+  --dark-violet: hsl(294, 86%, 20%);
   --soft-magenta: hsl(300, 69%, 71%);
 }
 
 body {
-  /* min-width: 100vw; */
   line-height: 1.3;
   text-rendering: optimizeSpeed;
   background-color: var(--white);
   font-family: 'Poppins', sans-serif;
-  background: var(--violet) url(./images/bg-desktop.svg) no-repeat center;
-  background-size: cover;
+  background: var(--dark-violet);
 }
 
-/* font-family: 'Open Sans', sans-serif; */
+.background {
+  display: flex;
+  justify-content: center;
+  background: url(./images/bg-desktop.svg) no-repeat;
+  background-size: cover;
+  /* min-width: 100vw; */
+  min-height: 100vh;
+}
+
+
 
 /* font-size + button */
 
@@ -133,7 +141,7 @@ header {
 }
 
 .hero__heading {
-  max-width: 520px;
+  /* max-width: 520px; */
 }
 
 .social-icons {
@@ -150,13 +158,96 @@ header {
 }
 
 svg {
-  fill: var(--white);
+  fill: white;
 }
 
 svg:hover {
+  cursor: pointer;
   fill: var(--soft-magenta);
 }
 
 .social-icons a:hover {
   transform: translatey(-6px);
+}
+
+
+@media (min-width: 1450px) {
+  .hero__heading h1 {
+    font: 600 80px/84px 'Poppins', sans-serif;
+  }
+
+  .hero__heading p {
+    font: 400 24px/30px 'Open Sans', sans-serif;
+  }
+}
+
+@media (max-width: 1440px) {
+  .background {
+    background-size: contain;
+  }
+
+  .hero__heading {
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .background {
+    background-size: cover;
+  }
+}
+
+@media (max-width: 1200px) {
+  .background {
+    background-image: url(./images/bg-mobile.svg);
+    background-size: contain;
+  }
+
+  .hero {
+    padding-top: 70px;
+  }
+
+  .container {
+    margin: 40px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero__heading {
+    width: 100%;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+    position: initial;
+  }
+
+  .btn {
+    margin-bottom: 64px;
+  }
+}
+
+
+@media (max-width: 750px) {
+
+  .hero__heading h1 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .hero__heading p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .btn {
+    font-size: 12px;
+    line-height: 18px;
+    padding: 12px 75px;
+  }
 }
